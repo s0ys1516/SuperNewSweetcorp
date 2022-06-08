@@ -1,0 +1,295 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%; // stylelint-disable-line
+  min-width: 320px;
+  min-height: 100%;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
+  flex-direction: column;  // и прижимаем footer в IE 10-11
+  min-height: 100%;
+  margin: 0;
+  word-break: break-word;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  text-align: left;
+  color: $text-color;
+  background-color: $body-bg;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 { font-size: $font-size-h1; } // stylelint-disable-line
+h2 { font-size: $font-size-h2; } // stylelint-disable-line
+h3 { font-size: $font-size-h3; } // stylelint-disable-line
+h4 { font-size: $font-size-h4; } // stylelint-disable-line
+h5 { font-size: $font-size-h5; } // stylelint-disable-line
+h6 { font-size: $font-size-h6; } // stylelint-disable-line
+
+p,
+ul,
+ol,
+dl,
+table,
+blockquote,
+pre,
+address,
+figure {
+  margin-top: 0;
+  margin-bottom: $typo-margin-vertical;
+}
+
+p {
+  // http://clagnut.com/blog/2395
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,
+ol {
+  margin-bottom: $typo-margin-vertical;
+  padding-left: 1.5em;
+
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+li {
+  line-height: inherit;
+}
+
+a {
+  color: $link-color;
+  background-color: transparent;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+  }
+
+  // &:visited {
+  //   color: $link-color--hover;
+  // }
+
+  &[href^='tel:'] {
+
+    // На больших экранах телефоны-ссылки делаем обычным текстом
+    @media (min-width: $viewport--lg) {
+      white-space: nowrap;
+      pointer-events: none;
+      text-decoration: inherit;
+      color: inherit;
+    }
+  }
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  overflow: auto;   // Удаление верт. скролла в IE.
+  resize: vertical; // Правильное изменение размеров
+}
+
+svg {
+  fill: currentColor;
+
+  a &,
+  button & {
+    pointer-events: none; // Мы любим Edge, это браузер! (почти)
+  }
+
+  &:not(:root) {
+    overflow: hidden; // Скрыть выступающее за границы в IE
+  }
+}
+
+hr {
+  box-sizing: content-box; // Проблема Firefox
+  height: 0;               // Проблема Firefox
+  margin-top: $typo-margin-vertical * 2;
+  margin-bottom: $typo-margin-vertical * 2;
+  border: 0;
+  border-top: 1px solid $border-color;
+  overflow: visible;       // Проблема Edge и IE
+}
+
+small {
+  font-size: $font-size-sm;
+}
+
+sub,
+sup {
+  font-size: $font-size-sm;
+}
+
+[tabindex='-1']:focus {
+  outline: none !important; // stylelint-disable-line
+}
+
+// chrome autofill background removal
+// Если на проекте у инпутов используются разные цвета фонов\текста -
+// удалите это из глобала и используйте локально с нужными цветами
+// rgba не подойдет, сконвертируйте цвет в hex без прозрачности
+// если в стилях уже используется box-shadow есть другое решение -
+// задать к списку транзишенов `background-color 10000000s ease-out`
+input:-webkit-autofill {
+  box-shadow: inset 0 0 0 1000px $white;
+
+  -webkit-text-fill-color: $black;
+}
+
+/* ======================================
+   $Кроссбраузерные фиксы
+   ====================================== */
+
+// Коррекция для кликабельных элементов с указанной ролью в iOS
+[role='button'] {
+  cursor: pointer;
+}
+
+// Мы любим Сафари (на самом деле, нет).
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none; // stylelint-disable-line
+}
+
+// area,
+// summary,
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
+  margin: 0;                  // Убираем margin в Firefox и Safari
+}
+
+button,
+input {
+  overflow: visible;    // Покажем торчащее в Edge
+  text-transform: none; // Уберём наследование text transform в Firefox
+}
+
+// Коррекция проблем стилизации для Safari
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; // stylelint-disable-line
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+// Коррекция для Mobile Safari (https://github.com/twbs/bootstrap/issues/11266)
+input[type='date'],
+input[type='time'],
+input[type='datetime-local'],
+input[type='month'] {
+  -webkit-appearance: listbox; // stylelint-disable-line
+}
+
+// firefox placeholder \ invalid fix + ios bdrs
+input,
+textarea {
+  border-radius: 0;
+
+  &::placeholder {
+    opacity: 1;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+select {
+  border-radius: 0;
+}
+
+// ie11 X removal
+input {
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+}
+
+// chrome search X removal
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  appearance: none;
+}
+
+// input[number] arrows removal
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+
+  appearance: none;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+// ios button \ inputs reset
+select,
+textarea,
+input:matches([type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"]) {
+  appearance: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: none;
+}
