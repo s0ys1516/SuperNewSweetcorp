@@ -1,6 +1,6 @@
 // Color Base https://colorscheme.ru/color-converter.html
 
-$black        : hsl(0, 0%, 0%);
+$black        : #474747;
 $gray-darkest : hsl(0, 0%, 10%);
 $gray-darker  : hsl(0, 0%, 20%);
 $gray-darken  : hsl(0, 0%, 30%);
@@ -12,6 +12,7 @@ $gray-lighter : hsl(0, 0%, 80%);
 $gray-lightest: hsl(0, 0%, 90%);
 $white        : hsl(0, 0%, 100%);
 $transparent  : rgba(255, 255, 255, 0);
+$red          : #DD4141;
 
 $color-main   : hsl(208, 98%, 43%);
 $color-success: hsl(120, 39%, 54%);

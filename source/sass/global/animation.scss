@@ -1,0 +1,17 @@
+.button--white:active {
+	box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+}
+
+.button--white:disabled {
+	background-color: #E8E8E8;
+	color: #A8A8A8;
+}
+
+.button--red:active {
+	box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+}
+
+.button--red:disabled {
+	background-color: #E8E8E8;
+	color: #A8A8A8;;
+}

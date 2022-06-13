@@ -1,6 +1,48 @@
 .footer {
   min-height: 100px;
-  padding: 0 60px;
+  padding: 16px 83px 16px 75px;
 
-  background-color: $color-main;
+  background-color: $red;
+  
+  @media(max-width: 1350px) {
+    padding: 16px 40px 16px 20px;
+  }
+
 }
+
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__logo {
+  max-width: 145px;
+
+  @media (max-width: 1300px) {
+    max-width: 95px;
+  }
+
+  @media (max-width: 700px) {
+    max-width: 75px;
+  }
+}
+
+.footer__phonenumber {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+
+  @media (max-width: 700px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.footer__wrapper > a.footer__phonenumber {  
+    
+  color: white;
+  }

@@ -1,0 +1,148 @@
+.gift__wrapper { 
+	display: flex;
+	max-width: 1290px;
+	margin: 0 auto;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.gift__title {
+	margin-bottom: 0;
+	text-align: center;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 41px;
+
+	@media (max-width: 743px) {
+		display: none;
+	}
+
+	@media (max-width: 345px) {
+		display: block;
+		font-size: 22px;
+		line-height: 25px;
+	}
+}
+.gift__list {
+	margin-top: 40px;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	list-style: none;
+	gap: 34px;
+	max-height: 340px;
+
+	@media (max-width: 1350px) {
+    	max-height: 218px;
+	}
+
+	@media (max-width: 742px) {
+		max-height: 450px;
+	}
+
+	@media (max-width: 540px) {
+		gap: 28px;
+	}
+
+	@media (max-width: 400px) {
+		gap: 5px;
+	}
+
+	
+	@media (max-width: 345px) {
+		gap: 10px;
+	}
+}
+.gift__point {
+	position: relative;
+	padding: 43px 239px 260px 29px;
+	max-width: 406px;
+	max-height: 334px;
+	width: 100%;
+	box-shadow: 0px 0px 30px -15px rgba(0, 0, 0, 0.25);
+	border-radius: 60px;
+
+	@media (max-width: 1350px) {
+		padding: 25px 148px 149px 20px;
+		max-width: 225px;
+	}
+
+	@media (max-width: 540px) {
+		padding: 25px 148px 102px 20px;
+		max-width: 150px;
+	}
+}
+
+.gift__subtitle {
+	white-space: nowrap;
+	font-size: 24px;
+	line-height: 28px;
+
+	@media (max-width: 1350px) {
+		font-size: 14px;
+		line-height: 16px;
+	}
+}
+
+.gift__picture {
+	position: absolute;
+	right: 60px;
+	bottom: 10px;	
+
+	@media (max-width: 1350px) {
+		max-height: 182px;
+		max-width: 142px;
+		right: 20px;
+		z-index: -1;
+	}
+
+	@media (max-width: 540px) {
+		max-width: 91px;
+	}
+}
+
+.gift__picture--first {
+	@media (max-width: 1350px) {
+		max-width: 104px;
+	}
+
+	@media (max-width: 540px) {
+		max-width: 60px;
+	}
+} 
+
+.gift__picture--third {
+	@media (max-width: 1350px) {
+		max-width: 130px;
+	}
+
+	@media (max-width: 540px) {
+		max-width: 73px;
+	}
+}
+
+li.gift__point--hidden {
+    padding: 68px 20px;
+	box-shadow: none;
+
+	@media (min-width: 743px) {
+		display: none;
+	}
+
+	@media (max-width: 540px) {
+		padding: 45px 9px;
+		max-width: 168px;
+	}
+	
+	@media (max-width: 345px) {
+		display: none;
+	}
+
+}
+
+h2.gift__subtitle--hidden {
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 25px;
+}

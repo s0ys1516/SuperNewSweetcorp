@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 
   @@include("source/html/base/head.html")
   <title>ProjectName — Главная</title>
 
 </head>
+
 <body>
 
   <div style="display: none;">
@@ -14,31 +16,42 @@
 
   <div class="wrapper">
     @@include("source/html/base/header.html", {
-      "main": true
+    "main": true
     })
 
     <main>
-      <div class="container">
+      @@include("source/html/base/introduce.html")
+      @@include("source/html/base/advantages.html")
+      @@include("source/html/base/gift.html")
+      @@include("source/html/base/firm.html")
+      @@include("source/html/base/store.html")
+      @@include("source/html/base/work.html")
+      @@include("source/html/base/delivery.html")
+      @@include("source/html/base/partners.html")
+      @@include("source/html/base/map.html")
+      @@include("source/html/base/form.html")
+      <!-- <div class="container">
         <p><a href="#" data-modal="feedback">modal--feedback link</a></p>
         <p><a href="#" data-modal="success">modal--success link</a></p>
-      </div>
+      </div> -->
     </main>
 
     @@include("source/html/base/footer.html")
 
     @@include("source/html/base/modal.html", {
-      "name": "feedback"
+    "name": "feedback"
     })
 
     @@include("source/html/base/modal.html", {
-      "name": "success",
-      "fitContent": true,
-      "noScale": true,
-      "mod": "some-mod"
+    "name": "success",
+    "fitContent": true,
+    "noScale": true,
+    "mod": "some-mod"
     })
   </div>
 
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,76 @@
+.form__wrapper {
+	margin: 0 auto;
+	padding: 20px;
+	max-width: 1070px;
+	text-align: center;
+}
+.form__title {
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 41px;
+	
+	@media (max-width: 700px) {
+		font-size: 26px;
+		line-height: 30px;
+	}
+}
+.form__text {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 21px;
+
+	@media (max-width: 700px) {
+		font-size: 14px;
+		line-height: 16px;
+	}
+}
+
+.form__form {
+	margin: 0 auto;
+	max-width: 453px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form__username {
+	padding: 26px 0 26px 30px;
+	max-width: 453px;
+	color: $red;
+	border: 2px solid $red;
+	border-radius: 51px;
+}
+
+.form__phone {
+	padding: 26px 0 26px 30px;
+	max-width: 453px;
+	color: $red;
+	border: 2px solid $red;
+	border-radius: 51px;
+}
+
+button.form-button {
+	padding: 24.5px 0;
+	max-width: 453px;
+	text-align: center;
+	color: white;
+	background-color: $red;
+	border: 2px solid $red;
+	border-radius: 51px;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+color: $red;
+} 
+
+input[type="text"]::-moz-placeholder {
+color: $red;
+}
+
+input[type="tel"]::-webkit-input-placeholder {
+	color: $red;
+} 
+
+input[type="tel"]::-moz-placeholder {
+	color: $red;
+}

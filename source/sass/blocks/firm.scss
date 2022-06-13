@@ -1,0 +1,27 @@
+.firm__wrapper {
+	margin: 0 auto;
+	padding: 20px;
+	max-width: 1070px;
+	text-align: start;
+}
+.firm__title {
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 41px;
+
+	@media (max-width:700px) {
+		font-size: 22px;
+		line-height: 25px;
+	}
+}
+.firm__list {
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	list-style: none;
+	gap: 35px;
+}
+.firm__point {
+	max-width: 199px;
+}

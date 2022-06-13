@@ -1,1 +1,19 @@
 // @include font("font_name", "file_name", "weight", "style");
+
+@font-face {
+    font-family: "Inglobal";
+    src: url(../fonts/inglobal.woff2);
+    src: url(../fonts/inglobal.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+    font-family: "Inglobal";
+    src: url(../fonts/inglobalb.woff2);
+    src: url(../fonts/inglobalb.woff) format('woff');
+    font-weight: 700;
+    font-style: normal;
+	font-display: swap;
+}

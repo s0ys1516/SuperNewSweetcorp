@@ -13,6 +13,7 @@
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
+@import "global/animation";
 
 // Blocks
 //---------------------------------
@@ -20,6 +21,16 @@
 @import "blocks/header";
 @import "blocks/footer";
 @import "blocks/modal";
+@import "blocks/introduce";
+@import "blocks/advantages.scss";
+@import "blocks/gift.scss";
+@import "blocks/firm.scss";
+@import "blocks/store.scss";
+@import "blocks/work.scss";
+@import "blocks/partners.scss";
+@import "blocks/delivery.scss";
+@import "blocks/map.scss";
+@import "blocks/form.scss";
 
 // Модуль для тестирования, не должен быть в финальной версии и версии для клиента
 @import "vendor/test";
