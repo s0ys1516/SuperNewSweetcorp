@@ -33,6 +33,8 @@
 }
 .work__point {
 	display: flex;
+	position: relative;
+	padding-top: 44px;
 	align-items: center;
 	justify-content: center;
 	max-width: 300px;
@@ -50,6 +52,11 @@
 	font-size: 26px;
 	line-height: 30px;
 	color: $red;
+
+	@media (max-width: 700px) {
+		position: fixed;
+		transform: scale(0);
+	}
 }
 
 .work__text {
@@ -58,22 +65,66 @@
 	line-height: 18px;
 }
 
-.work__point--first {
-}
-
-.work__point--second {
-}
-
-.work__point--third {
-}
-
-.work__point--fourth {
-}
-
 .work__point--fifth {
 
 	@media (max-width: 900px) {
 		max-width: 1000px;
 		width: 100%;
 	}
+}
+
+.work__point--first::before {
+	content: "";
+	position: absolute;
+	left: 27%;
+	top: 0;
+	background-image: url(../img/svg/btn.svg);
+	background-repeat: no-repeat;
+	width: 155px;
+	height: 37px;
+}
+
+.work__point--second::before {
+	content: "";
+	position: absolute;
+    left: 45%;
+	top: 0;
+	background-image: url(../img/svg/manager.svg);
+	background-repeat: no-repeat;
+	width: 155px;
+	height: 37px;
+}
+
+.work__point--third::before {
+	content: "";
+	position: absolute;
+    left: 45%;
+	top: 0;
+	background-image: url(../img/svg/buy.svg);
+	background-repeat: no-repeat;
+	width: 155px;
+	height: 37px;
+}
+
+.work__point--fourth::before {
+	content: "";
+	position: absolute;
+    left: 45%;
+	top: 0;
+	background-image: url(../img/svg/order.svg);
+	background-repeat: no-repeat;
+	width: 155px;
+	height: 37px;
+}
+
+
+.work__point--fifth::before {
+	content: "";
+	position: absolute;
+    left: 45%;
+	top: 0;
+	background-image: url(../img/svg/hearts.svg);
+	background-repeat: no-repeat;
+	width: 155px;
+	height: 37px;
 }

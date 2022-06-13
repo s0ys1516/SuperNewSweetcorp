@@ -40,6 +40,7 @@
 
 .map__point {
 	margin-bottom: 20px;
+	position: relative;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 21px;
@@ -66,22 +67,31 @@
 
 .map__point--first::before {
 	content: "";
-	background-image: url(../img/content/telephone.svg);
+	background-image: url(../img/svg/telephone.svg);
 	background-repeat: no-repeat;
-	left: 0;
-	top: 50%;
+	width: 12px;
+	height: 12px;
+	position: absolute;
+    left: 0;
+	top: 25%;
 }
 .map__point--second::before {
 	content: "";
-	background-image: url(../img/content/location.svg);
+	background-image: url(../img/svg/location.svg);
 	background-repeat: no-repeat;
-	left: 0;
-	top: 50%;
+	width: 10px;
+	height: 14px;
+	position: absolute;
+    left: 0;
+	top: 25%;
 }
 .map__point--third::before {
 	content: "";
-	background-image: url(../img/content/email.svg);
+	background-image: url(../img/svg/email.svg);
 	background-repeat: no-repeat;
-	left: 0;
-	top: 50%;
+	width: 13px;
+	height: 9px;
+	position: absolute;
+    left: 0;
+	top: 25%;
 }
