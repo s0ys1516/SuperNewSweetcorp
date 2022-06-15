@@ -1,4 +1,4 @@
-import {setupModal} from '../utils/modal';
+import { setupModal } from '../utils/modal';
 
 const modals = document.querySelectorAll('.modal');
 const modalFeedback = document.querySelector('.modal--feedback');
@@ -29,4 +29,11 @@ const initModals = () => {
   }
 };
 
-export {initModals};
+export { initModals };
+
+document.querySelector('.main-nav__toggle').onclick = function () {
+  document.querySelector('.main-nav__toggle').classList.toggle('main-nav__toggle--opened');
+
+  document.querySelector('.main-nav__wrapper').classList.toggle('main-nav__wrapper--opened');
+
+};
