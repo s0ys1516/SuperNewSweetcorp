@@ -1,5 +1,13 @@
+.button--white:hover {
+	box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+	background-color: $red;
+	color: white;
+}
+
 .button--white:active {
 	box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+	background-color: #fff;
+	color: $red;
 }
 
 .button--white:disabled {
@@ -7,8 +15,18 @@
 	color: #A8A8A8;
 }
 
-.button--red:active {
+.button--red:hover {
 	box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+	background-color: #fff;
+	border: 1px solid $red;
+	color: $red;
+}
+
+.button--red:active {
+	border: 1px solid #fff;
+	box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+	background-color: $red;
+	color: #fff;
 }
 
 .button--red:disabled {
