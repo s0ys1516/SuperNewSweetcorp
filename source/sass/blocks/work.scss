@@ -1,7 +1,38 @@
-.work__wrapper {
-	margin: 0 auto;
-	max-width: 941px;
+.work {
+    margin: 0 auto;
+	padding: 194px 0 275px 0;
+	position: relative;
+	max-width: 1440px;
 	text-align: center;
+	background-image: url(../img/bg/work.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 740px;
+	
+	@media (max-width: 1300px) {
+		background-image: url(../img/bg/work768.jpg);
+	}
+
+	@media (max-width: 700px) {
+		background-image: url(../img/bg/work360.jpg);
+	}
+
+	@media (max-width: 545px) {
+		padding: 45px 0 108px;
+	}
+}
+
+
+.work__background {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.work__img {
+	width: 100%;
 }
 
 .work__title {
@@ -17,11 +48,18 @@
 
 .work__list {
 	padding: 0;
+	max-width: 941px;
+	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	gap: 20px;
+	row-gap: 50px;
 	flex-wrap: wrap;
 	list-style: none;
+
+	@media (max-width: 1030px) {
+		max-width: 630px;
+	}
 
 	@media (max-width: 900px) {
 		justify-content: space-between;
@@ -65,10 +103,12 @@
 	line-height: 18px;
 }
 
+
+
 .work__point--fifth {
 
 	@media (max-width: 900px) {
-		max-width: 1000px;
+		max-width: 650px;
 		width: 100%;
 	}
 }

@@ -1,8 +1,12 @@
-.partners__wrapper {
-	margin: 0 auto;
+.partners {
+	margin: 0 auto 100px;
 	padding: 20px;
 	max-width: 1070px;
 	text-align: start;
+
+	@media (max-width: 1300px) {
+		margin-bottom: 70px;
+	}
 }
 .partners__title {
 	font-weight: 400;

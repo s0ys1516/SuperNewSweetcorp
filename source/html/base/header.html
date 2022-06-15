@@ -1,7 +1,7 @@
 <header class="header @@if (context.mod) { header--@@mod }">
   <div class="header__wrapper">
     <a class="header__logo" @@if (!context.main) { href="main.html" } aria-label="Переход на главную">
-      <img src="../img/svg/logo.svg" alt="Логотип SweetCorp" width="100" height="88">
+      <img src="img/svg/logo.svg" alt="Логотип SweetCorp" width="100" height="88">
     </a>
 
     <nav class="main-nav">
@@ -38,10 +38,10 @@
               (context.headerActiveLinkIndex !==3) { href="#" }>Контакты</a>
           </li>
         </ul>
+        <a href="tel:+74954764144" class="header__phone">
+          +7 (495) 476 41-44
+        </a>
       </div>
     </nav>
-    <a href="tel:+74954764144" class="header__phone">
-      +7 (495) 476 41-44
-    </a>
   </div>
 </header>

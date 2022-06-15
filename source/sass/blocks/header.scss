@@ -27,10 +27,17 @@
     color: $white;
   }
 
+  .main-nav {
+    width: 100%;
+
+    @media(max-width: 1050px) {
+      width: auto;
+    }
+  }
+
   ul {
     display: flex;
-    margin: 0;
-    margin-right: 67px;
+    margin: 0px 0px 0 95px;
     padding: 0;
     gap: 79px;
 
@@ -77,5 +84,10 @@
     @media(max-width: 1050px) {
       display: none;
     }
+  }
+
+  .main-nav__wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 }

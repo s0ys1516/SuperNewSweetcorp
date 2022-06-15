@@ -1,5 +1,6 @@
-.advantages__wrapper {
-	margin: 270px 266px 0 361px;
+.advantages {
+    margin: 270px auto 0;
+    margin: 270px auto 50px;
 	max-width: 943px;
 	text-align: center;
 
@@ -7,17 +8,21 @@
 		margin-bottom: 270px;
 		margin-top: 135px;
 	}
+	
+	@media (min-width: 2100px) {
+		max-width: 1200px;
+		width: 100%;
+	}
 
 	@media (min-width:1590px) {
 		margin: 0 auto;
 		margin-bottom: 200px;
-		margin-top: 65px;
+		margin-top: 80px;
 		color: white;
 	}
 
 	@media (max-width:1300px) {
-		margin: 0 auto;
-		margin-top:205px;
+		margin: 205px auto 50px;
 	}
 
 	@media (max-width:650px) {
@@ -46,19 +51,34 @@
 
 	.advantages__list {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		flex-wrap: wrap;
 		list-style: none;
-		gap: 30px;
+		column-gap: 80px;
+		row-gap: 41px;
 		padding: 0;
 
+		@media (min-width: 2100px) {
+			width: 100%;
+		}
+
+		@media (max-width: 1300px) {
+			justify-content: center;
+		}
+
 		.advantages__point {
-			max-width: 250px;
-			padding: 27px 20px 27px 35px;
 			text-align: start;
 			font-size: 16px;
 			line-height: 18px;
 			position: relative;
+
+			@media (min-width: 2100px) {
+				max-width: 330px;
+			}
+
+			@media (max-width: 900px) {
+				max-width: 250px;
+			}
 
 			@media (max-width: 900px) {
 				margin-left: 30px;
@@ -76,13 +96,28 @@
 
 }
 
+.advantages__point--first {
+	max-width: 270px;
+    padding: 20px 0px 25px 85px;
+}
+
+.advantages__point--second {
+	max-width: 291px;
+    padding: 20px 0px 25px 75px;
+}
+
+.advantages__point--third {
+	max-width: 222px;
+    padding: 20px 0px 25px 63px;
+}
+
 
 .advantages__point--first::before {
     content: "";
     width: 70px;
     height: 38px;
 	position: absolute;
-    left: -47px;
+    left: 0;
     top: 27%;
     background-image: url(../img/svg/delivery.svg);
     background-repeat: no-repeat;
@@ -97,7 +132,7 @@
     width: 60px;
     height: 60px;
 	position: absolute;
-    left: -36px;
+    left: 0px;
     top: 18%;
     background-image: url(../img/svg/candy.svg);
     background-repeat: no-repeat;
@@ -112,7 +147,7 @@
     width: 48.15px;
     height: 50px;
 	position: absolute;
-    left: -26px;
+    left: 0;
     top: 26%;
     background-image: url(../img/svg/gift.svg);
     background-repeat: no-repeat;
