@@ -11,24 +11,26 @@
       <div class="main-nav__wrapper">
         <ul class="main-nav__list">
           <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 0) { main-nav__link--active }" @@if
+            <a href="#catalog"
+              class="main-nav__link @@if (context.headerActiveLinkIndex === 0) { main-nav__link--active }" @@if
               (context.headerActiveLinkIndex !==0) { href="#" }>Каталог подарков</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 1) { main-nav__link--active }" @@if
-              (context.headerActiveLinkIndex !==1) { href="#" }>О компании</a>
+            <a href="#work" class="main-nav__link @@if (context.headerActiveLinkIndex === 1) { main-nav__link--active }"
+              @@if (context.headerActiveLinkIndex !==1) { href="#" }>О компании</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 2) { main-nav__link--active }" @@if
+            <a href="#delivery"
+              class="main-nav__link @@if (context.headerActiveLinkIndex === 2) { main-nav__link--active }" @@if
               (context.headerActiveLinkIndex !==2) { href="#" }>Доставка и оплата</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 3) { main-nav__link--active }" @@if
-              (context.headerActiveLinkIndex !==3) { href="#" }>Контакты</a>
+            <a href="#map" class="main-nav__link @@if (context.headerActiveLinkIndex === 3) { main-nav__link--active }"
+              @@if (context.headerActiveLinkIndex !==3) { href="#" }>Контакты</a>
           </li>
         </ul>
-        <a href="tel:+74954764144" class="header__phone">
-          +7 (495) 476 41-44
+        <a href="tel:+74999388359" class="header__phone">
+          +7 (499) 938 83-59
         </a>
       </div>
     </nav>
