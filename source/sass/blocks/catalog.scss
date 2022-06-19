@@ -61,36 +61,38 @@
 	height: 34px;
 }
 
-.product__wrapper::after {
+.product__link {
+	display: none;
+	transition: all 0.3s;
+
 	@media (max-width:470px) {
-	content: "";
-	position: absolute;
-	background-image: url(../img/svg/card-mobile.svg);
-	background-repeat: no-repeat;
-    right: 27px;
-    bottom: 23px;
-    width: 30px;
-    height: 30px;
-	}
+		position: absolute;
+		background-image: url(../img/svg/card-mobile.svg);
+		background-repeat: no-repeat;
+		right: 27px;
+		bottom: 23px;
+		width: 30px;
+		height: 30px;
+		}
 }
 
-.product__wrapper:hover::after {
-	content: "";
+.product__wrapper:hover > .product__link {
 	position: absolute;
+	display: block;
 	background-image: url(../img/svg/hover-card.svg);
 	background-repeat: no-repeat;
     right: 40px;
 	bottom: 33px;
 	width: 50px;
 	height: 50px;
+	transition: all 0.3s;
 
 	@media (max-width:470px) {
 		display: none;
 	}
 }
 
-.product__wrapper:active::after {
-	content: "";
+.product__link:active {
 	background-image: url(../img/svg/active-card.svg);
 
 	@media (max-width:470px) {
