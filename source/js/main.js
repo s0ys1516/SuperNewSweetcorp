@@ -18,12 +18,6 @@ iosVhFix();
 
 initModals();
 
-//-- этот скрипт загружает модуль для тестирования, его не должно быть в финальном билде и на проде для клиента
-window.addEventListener('load', () => {
-  testInstruments();
-});
-//--
-
 // Плавная прокрутка
 const anchors = document.querySelectorAll('a[href*="#"]')
 

@@ -37,3 +37,35 @@ document.querySelector('.main-nav__toggle').onclick = function () {
   document.querySelector('.main-nav__wrapper').classList.toggle('main-nav__wrapper--opened');
 
 };
+
+document.querySelector('.main-nav__link--first').onclick = function () {
+  document.querySelector('.main-nav__toggle--opened').classList.toggle('main-nav__toggle--opened');
+
+  document.querySelector('.main-nav__wrapper--opened').classList.toggle('main-nav__wrapper--opened');
+
+};
+
+document.querySelector('.main-nav__link--second').onclick = function () {
+  document.querySelector('.main-nav__toggle--opened').classList.toggle('main-nav__toggle--opened');
+
+  document.querySelector('.main-nav__wrapper--opened').classList.toggle('main-nav__wrapper--opened');
+
+};
+
+document.querySelector('.main-nav__link--third').onclick = function () {
+  document.querySelector('.main-nav__toggle--opened').classList.toggle('main-nav__toggle--opened');
+
+  document.querySelector('.main-nav__wrapper--opened').classList.toggle('main-nav__wrapper--opened');
+
+};
+
+document.querySelector('.main-nav__link--fourth').onclick = function () {
+  document.querySelector('.main-nav__toggle--opened').classList.toggle('main-nav__toggle--opened');
+
+  document.querySelector('.main-nav__wrapper--opened').classList.toggle('main-nav__wrapper--opened');
+
+};
+
+document.querySelector('.product__btn').onclick = function () {
+  document.querySelector('.product__btn').classList.toggle('product__btn--active');
+};
