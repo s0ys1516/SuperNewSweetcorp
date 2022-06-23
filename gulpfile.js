@@ -42,46 +42,46 @@ const css = () => {
         console.log(err.message);
         this.emit('end');
       }
-  }))
-      .pipe(sourcemap.init())
-      .pipe(sass())
-      .pipe(postcss([autoprefixer({
-        grid: true,
-      })]))
-      .pipe(gcmq()) // выключите, если в проект импортятся шрифты через ссылку на внешний источник
-      .pipe(gulp.dest('build/css'))
-      .pipe(csso())
-      .pipe(rename('style.min.css'))
-      .pipe(sourcemap.write('.'))
-      .pipe(gulp.dest('build/css'))
-      .pipe(server.stream());
+    }))
+    .pipe(sourcemap.init())
+    .pipe(sass())
+    .pipe(postcss([autoprefixer({
+      grid: true,
+    })]))
+    .pipe(gcmq()) // выключите, если в проект импортятся шрифты через ссылку на внешний источник
+    .pipe(gulp.dest('build/css'))
+    .pipe(csso())
+    .pipe(rename('style.min.css'))
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('build/css'))
+    .pipe(server.stream());
 };
 
 const js = () => {
   return gulp.src(['source/js/main.js'])
-      .pipe(webpackStream(webpackConfig))
-      .pipe(gulp.dest('build/js'))
+    .pipe(webpackStream(webpackConfig))
+    .pipe(gulp.dest('build/js'))
 };
 
 const svgo = () => {
   return gulp.src('source/img/**/*.{svg}')
-      .pipe(imagemin([
-        imagemin.svgo({
-            plugins: [
-              {removeViewBox: false},
-              {removeRasterImages: true},
-              {removeUselessStrokeAndFill: false},
-            ]
-          }),
-      ]))
-      .pipe(gulp.dest('source/img'));
+    .pipe(imagemin([
+      imagemin.svgo({
+        plugins: [
+          { removeViewBox: false },
+          { removeRasterImages: true },
+          { removeUselessStrokeAndFill: false },
+        ]
+      }),
+    ]))
+    .pipe(gulp.dest('source/img'));
 };
 
 const sprite = () => {
   return gulp.src('source/img/sprite/*.svg')
-      .pipe(svgstore({inlineSvg: true}))
-      .pipe(rename('sprite_auto.svg'))
-      .pipe(gulp.dest('build/img'));
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename('sprite_auto.svg'))
+    .pipe(gulp.dest('build/img'));
 };
 
 const syncserver = () => {
@@ -103,6 +103,7 @@ const syncserver = () => {
   gulp.watch('source/favicon/**', gulp.series(copy, refresh));
   gulp.watch('source/video/**', gulp.series(copy, refresh));
   gulp.watch('source/downloads/**', gulp.series(copy, refresh));
+  // gulp.watch('source/@glidejs/**', gulp.series(copy, refresh));
   gulp.watch('source/*.php', gulp.series(copy, refresh));
 };
 
@@ -112,13 +113,13 @@ const refresh = (done) => {
 };
 
 const copysvg = () => {
-  return gulp.src('source/img/**/*.svg', {base: 'source'})
-      .pipe(gulp.dest('build'));
+  return gulp.src('source/img/**/*.svg', { base: 'source' })
+    .pipe(gulp.dest('build'));
 };
 
 const copypngjpg = () => {
-  return gulp.src('source/img/**/*.{png,jpg}', {base: 'source'})
-      .pipe(gulp.dest('build'));
+  return gulp.src('source/img/**/*.{png,jpg}', { base: 'source' })
+    .pipe(gulp.dest('build'));
 };
 
 const copy = () => {
@@ -130,10 +131,11 @@ const copy = () => {
     'source/video/**', // git искажает видеофайлы, некоторые шрифты, pdf и gif - проверяйте и если обнаруживаете баги - скидывайте тестировщику такие файлы напрямую
     'source/downloads/**',
     'source/*.php',
+    // 'source/@glidejs/**',
   ], {
     base: 'source',
   })
-      .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('build'));
 };
 
 const clean = () => {
@@ -156,17 +158,17 @@ const start = gulp.series(build, syncserver);
 const createWebp = () => {
   const root = ``;
   return gulp.src(`source/img/${root}**/*.{png,jpg}`)
-    .pipe(webp({quality: 90}))
+    .pipe(webp({ quality: 90 }))
     .pipe(gulp.dest(`source/img/${root}`));
 };
 
 const optimizeImages = () => {
   return gulp.src('build/img/**/*.{png,jpg}')
-      .pipe(imagemin([
-        imagemin.optipng({optimizationLevel: 3}),
-        imagemin.mozjpeg({quality: 75, progressive: true}),
-      ]))
-      .pipe(gulp.dest('build/img'));
+    .pipe(imagemin([
+      imagemin.optipng({ optimizationLevel: 3 }),
+      imagemin.mozjpeg({ quality: 75, progressive: true }),
+    ]))
+    .pipe(gulp.dest('build/img'));
 };
 
 exports.build = build;
