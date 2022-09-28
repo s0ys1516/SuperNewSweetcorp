@@ -103,7 +103,6 @@ const syncserver = () => {
   gulp.watch('source/favicon/**', gulp.series(copy, refresh));
   gulp.watch('source/video/**', gulp.series(copy, refresh));
   gulp.watch('source/downloads/**', gulp.series(copy, refresh));
-  // gulp.watch('source/@glidejs/**', gulp.series(copy, refresh));
   gulp.watch('source/*.php', gulp.series(copy, refresh));
 };
 
@@ -131,7 +130,6 @@ const copy = () => {
     'source/video/**', // git искажает видеофайлы, некоторые шрифты, pdf и gif - проверяйте и если обнаруживаете баги - скидывайте тестировщику такие файлы напрямую
     'source/downloads/**',
     'source/*.php',
-    // 'source/@glidejs/**',
   ], {
     base: 'source',
   })

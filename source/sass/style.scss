@@ -4,6 +4,12 @@
 @import "vendor/normalize";
 // @import "vendor/swiper";
 
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 // Global
 //---------------------------------
 
@@ -32,8 +38,6 @@
 @import "blocks/delivery.scss";
 @import "blocks/map.scss";
 @import "blocks/form.scss";
-
-// @import "../@glidejs/glide/src/assets/sass/glide.core";
 
 
 // используйте это для отключения ховеров на тач устройствах

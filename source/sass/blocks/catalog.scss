@@ -45,8 +45,9 @@
 	text-align: center;
 	box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.25);
 
-	@media (max-width:470px) {
-		max-width: 196px;
+	@media (max-width:700px) {
+		max-width: 200px;
+		width: 200px !important;
 	}
 }
 
@@ -73,7 +74,7 @@
 
 	@media (max-width:470px) {
 		position: absolute;
-		display: block;
+		display: none;
 		background-image: url(../img/svg/card-mobile.svg);
 		background-repeat: no-repeat;
 		background-color: #fff;
@@ -122,6 +123,7 @@
 }
 
 .product__photo {
+	margin-bottom: 15px;
 	width: 100%;
 }
 
@@ -129,6 +131,10 @@
 	width: 100%;
 	padding: 0 20px;
 	text-align: left;
+
+	@media (max-width:470px) {
+		padding: 0 5px;
+	}
 }
 
 .product__weight {
@@ -148,9 +154,10 @@
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 18px;
+	white-space: normal;
 
 	@media (max-width:470px) {
-		font-size: 10.4533px;
+		font-size: 9.5px;
 		line-height: 12px;
 	}
 }
